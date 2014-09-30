@@ -1,0 +1,29 @@
+<h1>{{name}}</h1>
+
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="{{workingSet}}" aria-valuemin="0" aria-valuemax="{{totalSets}}" style="width: {{workingSet/totalSets*100}}%;">
+  {{workingSet}} / {{totalSets}}
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body" style="text-align: center;">
+	<button ng-click="decrementWeight()" type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-minus-sign" style="font-size: 5em;"></span></button>
+    <span style="font-size: 5em;font-weight: bold; padding:10px;">{{weight}}</span>
+    <button ng-click="incrementWeight()" type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-plus-sign" style="font-size: 5em;"></span></button>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body" style="text-align: center;">
+	<button ng-click="decrementReps()" type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-minus-sign" style="font-size: 5em;"></span></button>
+    <span style="font-size: 5em;font-weight: bold; padding:10px;">{{reps}}</span>
+    <button ng-click="incrementReps()" type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-plus-sign" style="font-size: 5em;"></span></button>
+  </div>
+</div>
+
+
+<button ng-click="nextSet()" type="button" class="btn btn-primary btn-lg" style="width:100%;height:100px;">
+	<span style="font-size:2em;">Next Set</span>
+	<span style="padding-left:20px;font-size:2em;" class="glyphicon glyphicon-circle-arrow-right"></span>
+</button>
