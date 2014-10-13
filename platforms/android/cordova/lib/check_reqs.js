@@ -40,7 +40,10 @@ function forgivingWhichSync(cmd) {
 function tryCommand(cmd, errMsg) {
     var d = Q.defer();
     child_process.exec(cmd, function(err, stdout, stderr) {
-        if (err) d.reject(new Error(errMsg));
+        if (err) {
+		d.reject(new Error(errMsg));
+		console.log(err);
+	}
         else d.resolve(stdout);
     });
     return d.promise;
