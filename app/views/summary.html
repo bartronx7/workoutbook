@@ -1,19 +1,21 @@
 <h1>Summary</h1>
 
-<table ng-repeat="workout in results" class="table">
+<table ng-repeat="excercise in results" class="table">
 	<tr>
   		<th colspan="3">
-			{{workout.name}}
+			{{excercise.name}}
   		</th>
   	</tr>
   	<tr>
 	  	<th>Set</th>
 	  	<th>Weight</th>
 	  	<th>Reps</th>
+      <th>Duration</th>
   	</tr>
-  	<tr ng-repeat="set in workout.sets">
+  	<tr ng-repeat="set in excercise.sets">
   		<td>{{set.setNumber}}</td>
   		<td>{{set.weight}}</td>
   		<td>{{set.reps}}</td>
+      <td>{{set.duration}}</td>
   	</tr>
 </table>

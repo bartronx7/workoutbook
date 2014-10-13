@@ -9,7 +9,10 @@
  */
 angular.module('workoutbookApp')
   .controller('MainCtrl', function ($scope,$location) {
-  	$scope.beginWorkout = function(){
-  		$location.path('/workout');
+
+  	$scope.activeWorkout = 'today';
+
+  	$scope.chooseWorkout = function(name){
+  		$scope.activeWorkout = name;
   	};
   });
