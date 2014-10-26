@@ -1,0 +1,28 @@
+terminology
+
+program:
+  A collection of dates associated with workouts
+
+workout:
+  An ordered series of excercises
+
+excercise:
+  A description of actions to take
+
+sets
+  number of times to repeat either a count or duration of an action
+
+reps
+  the count of the action itself
+
+duration
+  the count of time to perform the action
+
+action
+  can be either single movement of the body, or a nested excercise
+
+result
+  record of actions performed in the context of a workout on a particular date
+
+person
+  context of which results are stored

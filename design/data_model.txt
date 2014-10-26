@@ -1,0 +1,102 @@
+
+entities:
+-----------------
+gym
+program
+workout
+excercise
+set
+person
+date
+schedule
+
+
+relationships:
+------------------
+gym 1->m program 1->m workout 1->m excercise
+
+person 1->m gym
+
+person 1->m results 1->m sets
+
+gym m->1 date 1->1 workout
+
+gym 1->1 schedule 1->m date 1->1 workout (workout of the day)
+
+
+
+model
+------------------------
+
+gym {
+	id
+	contact {
+		name
+		addr
+		phone
+		web
+    social {
+      facebook
+      twitter
+      linkedin
+      instagram
+      any others dynamically added in here
+    }
+	}
+  members
+	program
+  schedule {
+    days[]
+  }
+}
+
+program {
+  name
+  gymid || shared?
+  workouts [{
+    daynumber
+    workout {
+      //embedded workout object
+      //can make a workout reusable maybe
+    }
+  }]
+}
+
+day {
+  date
+  workout {
+    // embedded workout object
+  }
+}
+
+workout {
+  excercises [{
+    excerciseid
+    type: AMRAP, sets,
+    sets
+    duration
+  }]
+}
+
+person {
+  contact
+  personal bests
+  weight
+  age
+  results[{
+    date
+    sets[{
+      excerciseid
+      weight
+      reps
+    }]
+  }]
+}
+
+excercise {
+  id
+  name
+  description
+  videoURL
+  anything else?
+}
