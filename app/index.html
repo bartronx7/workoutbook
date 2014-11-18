@@ -21,55 +21,12 @@
       });
     </script>
   </head>
-  <body>
+  <body ng-app="workoutbookApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div style="background-color:black;height:60px;width:100%;margin-top:-20px;padding: 0;border:0;">
-      <div style="width:100%;text-align: center;height:100%;">
-
-
-        <div style="padding-top: 15px;">
-          <span style="color:white;font-size:20px;border-top:10px;">Workout Book</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- slide menu -->
-    <div ng-controller="SlidemenuCtrl">
-
-      <!-- hamburger -->
-      <div style="float:left;margin-left:0;margin-top:-60px;">
-        <span ng-click="showMenu()" style="font-size: 40px;color:white;">&#x2261</span>
-      </div>
-
-      <!-- side menu -->
-      <div style="height:100%;width:300px;float:top;position:absolute; background-color:black;z-index: 100;" ng-show="slideMenuVisible">
-
-
-        <div ng-click="goTo('/')" style="width:100%;height:50px;text-align: left; padding:15px;">
-          <span style="color:white;margin-left:10px;margin-right:10px;font-size: 1.5em;" class="glyphicon glyphicon-play-circle"></span>
-          <span style="color:white;font-size: 1.6em;">Today</span>
-        </div>
-
-        <div ng-click="goTo('/progress')" style="width:100%;height:50px;text-align: left; padding:15px;">
-          <span style="color:white;margin-left:10px;margin-right:10px;font-size: 1.5em;" class="glyphicon glyphicon-stats"></span>
-          <span style="color:white;font-size: 1.6em;">Progress</span>
-        </div>
-
-        <div ng-click="goTo('/goals')" style="width:100%;height:50px;text-align: left; padding:15px;">
-          <span style="color:white;margin-left:10px;margin-right:10px;font-size: 1.5em;" class="glyphicon glyphicon-tasks"></span>
-          <span style="color:white;font-size: 1.6em;">Goals</span>
-        </div>
-      </div>
-    </div>
-
-
-    <div >
-      <div ng-view="" class="container"></div>
-    </div>
+    <div id="angular-app"></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -132,6 +89,8 @@
         <script src="scripts/services/workoutmodel.js"></script>
         <script src="scripts/directives/excercise_progress.js"></script>
         <script src="scripts/services/resultsmodel.js"></script>
+        <script src="scripts/directives/top-bar.js"></script>
+        <script src="scripts/directives/side-menu.js"></script>
         <!-- endbuild -->
 </body>
 </html>
