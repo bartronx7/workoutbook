@@ -39,9 +39,10 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var domElement = document.getElementsById('angular-app');
+        var domElement = document.getElementById('angular-app');
         if(angular){
-            angular.bootstrap(domElement,['workoutbookApp']);
+            console.log('bootstrapping angular now');
+            angular.bootstrap(document,['workoutbookApp']);
         } else {
             console.log('angular not installed, skipping bootstrap');
         }
@@ -50,3 +51,4 @@ var app = {
 };
 
 app.initialize();
+angular.element(document).ready(app.onDeviceReady);
